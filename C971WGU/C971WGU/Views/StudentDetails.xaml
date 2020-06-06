@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971WGU.Views.StudentDetails">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+
+                <Frame Margin="20" CornerRadius="10" BorderColor="#F0F0F0">
+                    <StackLayout>
+
+                        <Label Text="Edit Student Profile"
+                                HorizontalOptions="Center"
+                                TextColor="#008B82"
+                                Margin="0,20,0,20"
+                                FontSize="20"/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,0">
+                            <StackLayout>
+
+                                <Entry x:Name="StudentFirstInput" FontSize="14" Placeholder="First Name"/>
+                                <Entry x:Name="StudentLastInput" FontSize="14" Placeholder="Last Name"/>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label  Margin="15,10,0,0" FontSize="15" Text="Student Contact Information: "/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,0">
+                            <StackLayout>
+
+                                <Entry x:Name="StudentEmailInput" FontSize="14" Placeholder="Email Address"/>
+                                <Entry x:Name="StudentPhoneInput" FontSize="14" Placeholder="Phone Number"/>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Grid Margin="20" HorizontalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="CancelRegistrationBtn"
+                                    Grid.Column="0"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Cancel"
+                                    Clicked="CancelRegistrationBtn_clicked"/>
+
+                            <Button x:Name="SaveRegistrationBtn"
+                                    Grid.Column="1"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Save"
+                                    Clicked="SaveRegistrationBtn_clicked"/>
+                        </Grid>
+                        
+                    </StackLayout>
+                </Frame>
+                
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

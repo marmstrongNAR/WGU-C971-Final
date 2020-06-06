@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971WGU.Views.StudentDashboard">
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame CornerRadius="10"
+                   BorderColor="#F0F0F0"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   WidthRequest="220">
+                <StackLayout>
+
+                    <Label x:Name="NameLabel"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           Text="Welcome: "/>
+
+                    <Label x:Name="EmailLabel"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           Text="Student Email: "/>
+
+                    <Label x:Name="PhoneLabel"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           Text="Student Email: "/>
+
+                    <Button x:Name="EditStudentBtn"
+                            Margin="0,20,0,0"
+                            HeightRequest="40"
+                            CornerRadius="10"
+                            BackgroundColor="#9537B1"
+                            TextColor="#FFFFFF"
+                            Text="Edit Profile"
+                            Clicked="EditStudentBtn_clicked"/>
+
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

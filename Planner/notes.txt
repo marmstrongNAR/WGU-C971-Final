@@ -1,0 +1,54 @@
+-- Project Overview --
+
+Built With Visual Studio 2019 Community Edition
+Xamarin Forms  -  .NET Standard 2.0
+Used Android Emulator (Android 9.0)
+
+-- Color Schemes --
+
+Primary - #9537B1
+Secondary - #008B82
+Accent - #74268B
+
+-- Icon URL --
+
+Cole Bernis (2013, November 29). Iconfinder.com - Feather icons by Cole Bernis
+Retrieved from https://www.iconfinder.com/iconsets/feather
+
+-- Libraries Used --
+
+SQLite-NET.PCL
+Xam.Plugins.Notifier
+   
+   -- Usability Notes --
+
+-All forms can be opened from dashboard or within parent model
+
+-Child associations aren't necessary except in the case of courses where a performance and objective assessment are necessary
+
+Notifications are set push 15 minutes before the start / end of an assessment and 24 hours before the start/end of a course
+
+-No more than 6 courses per term can be added
+
+-Tested add method for courses and assessments (should refresh list after add)
+
+-Must select item and press + button to add to list
+
+-Notifications are set to pop up 15 minutes before assessment start/end and 1 day before course start/end
+
+-Test courses and assessments have notifications turned off by default but it can be enabled to test notifications (checkbox in form)
+
+   
+   -- Revision Notes 1 --
+
+-Added default value to course and assessment picklists to prevent nulls
+-Wrapped method to build dashboard table in try/catch to allow opening forms even with not term selected
+-Tested adding all models both from dashboard and inside forms
+-Tested editing / deleting all models
+
+   
+   -- Revision Notes 2 --
+
+-Added 0 to instructor default value to prevent invalid null values
+-Changed order for intermodal adding Assessments
+-Tested adding assessments successfully both from dashboard and inside Course form

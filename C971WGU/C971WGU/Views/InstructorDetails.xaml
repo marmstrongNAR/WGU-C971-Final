@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971WGU.Views.InstructorDetails">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+
+                <Frame Margin="20" CornerRadius="10" BorderColor="#F0F0F0">
+                    <StackLayout>
+
+                        <Label x:Name="InstructorBanner"
+                                Text="Add New Instructor"
+                                HorizontalOptions="Center"
+                                TextColor="#008B82"
+                                Margin="0,20,0,20"
+                                FontSize="20"/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,0">
+                            <StackLayout>
+
+                                <Entry x:Name="InstructorFirstInput" FontSize="14" Margin="5" Placeholder="First Name"/>
+                                <Entry x:Name="InstructorLastInput" FontSize="14" Margin="5" Placeholder="Last Name"/>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label  Margin="15,10,0,0" FontSize="15" Text="Instructor Contact Information: "/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,0">
+                            <StackLayout>
+
+                                <Entry x:Name="InstructorPhoneInput" FontSize="14" Margin="5" Placeholder="Phone Number"/>
+                                <Entry x:Name="InstructorEmailInput" FontSize="14" Margin="5" Placeholder="Email Address"/>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Grid Margin="20" HorizontalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="120"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="CancelInstructorBtn"
+                                    Grid.Column="0"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Cancel"
+                                    Clicked="CancelInstructorBtn_clicked"/>
+
+                            <Button x:Name="SaveInstructorBtn"
+                                    Grid.Column="1"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Save"
+                                    Clicked="SaveInstructorBtn_clicked"/>
+                        </Grid>
+                        
+                    </StackLayout>
+                </Frame>
+                
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

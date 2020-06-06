@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971WGU.Views.AssessmentDashboard">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+
+                <Frame Margin="20" CornerRadius="10" BorderColor="#F0F0F0">
+                    <StackLayout>
+
+                        <Label FontSize="14" Margin="0,20,0,0" FontAttributes="Bold" Text="Upcoming Assessments: "/>
+
+                        <Frame Margin="5" CornerRadius="10" BorderColor="#F0F0F0">
+                            <TableView HeightRequest="120" Intent="Data">
+                                <TableRoot x:Name="AssessmentDataTblRoot"/>
+                            </TableView>
+                        </Frame>
+                        
+                        <Label FontSize="14" Margin="0,20,0,0" FontAttributes="Bold" Text="Assessment Options: "/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="AddAssessmentBtn" 
+                                    Grid.Column="0"
+                                    Margin="2"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Add"
+                                    Clicked="AddAssessmentBtn_clicked"/>
+
+                            <Button x:Name="EditAssessmentBtn"
+                                    Grid.Column="1"
+                                    Margin="2"
+                                    HeightRequest="40"
+                                    CornerRadius="10"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Edit"
+                                    Clicked="EditAssessmentBtn_clicked"/>
+
+                            <Button x:Name="DeleteAssessmentBtn"
+                                    Grid.Column="2"
+                                    Margin="2"
+                                    HeightRequest="40"
+                                    CornerRadius="10"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Delete"
+                                    Clicked="DeleteAssessmentBtn_clicked"/>
+                        </Grid>
+                        
+                    </StackLayout>
+                </Frame>
+
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

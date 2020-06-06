@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971WGU.Views.CourseDetails">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+
+                <Frame Margin="20" CornerRadius="10" BorderColor="#F0F0F0">
+                    <StackLayout>
+
+                        <Label x:Name="CourseBanner"
+                                Text="Add New Course"
+                                HorizontalOptions="Center"
+                                TextColor="#008B82"
+                                Margin="0,20,0,20"
+                                FontSize="20"/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Entry x:Name="CourseTitleInput" FontSize="15" Placeholder="Course Title"/>
+                                <Picker x:Name="CourseStatusInput" FontSize="15" Title="Status"/>
+                                <Picker x:Name="CourseTermInput" FontSize="15" Title="Term"/>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Picker x:Name="CourseInstructorInput"
+                                            HeightRequest="40"
+                                            FontSize="15"
+                                            Grid.Column="0"
+                                            Title="Select An Instructor"/>
+
+                                    <ImageButton x:Name="PlusInstructorBtn"
+                                                CornerRadius="10" 
+                                                Padding="5"
+                                                Source="Add_icon.png"
+                                                HeightRequest="40"
+                                                BackgroundColor="#9537B1"
+                                                Grid.Column="1"
+                                                Clicked="PlusInstructorBtn_clicked"/>
+                                </Grid>
+                                
+                                <Label Margin="0,10,0,0" FontSize="15" Text="Course Credits"/>
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Stepper x:Name="CreditStepper"
+                                             HeightRequest="40"
+                                             Minimum="0"
+                                             Maximum="10"
+                                             Increment="1"
+                                             Grid.Column="0"/>
+
+                                    <Label x:Name="CourseCreditInput"
+                                           BindingContext="{x:Reference CreditStepper}"
+                                           Text="{Binding Value}"
+                                           Padding="10"
+                                           Grid.Column="1"
+                                           HeightRequest="40"
+                                           FontSize="15"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Margin="15,10,0,0" FontSize="15" Text="Course Notes"/>
+                        
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Editor x:Name="CourseNotesInput"
+                                        HeightRequest="100"
+                                        FontSize="15"
+                                        Placeholder="Notes"/>
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Share"
+                                           FontSize="15"
+                                           HorizontalOptions="End"
+                                           VerticalOptions="Center"
+                                           Grid.Column="0"/>
+                                    
+                                    <ImageButton x:Name="ShareBtn"
+                                            Grid.Column="1"
+                                            CornerRadius="10"
+                                            HeightRequest="40"
+                                            Padding="10"
+                                            BackgroundColor="#9537B1"
+                                            Source="Share_icon.png"
+                                            Clicked="ShareBtn_clicked"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Margin="15,10,0,0" FontSize="15" Text="Course Duration: "/>
+                        
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Label Text="Start Date / Time: " FontSize="15" Padding="15"/>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" HeightRequest="20" Source="Calendar_icon.png"/>
+                                    <DatePicker x:Name="CourseStartDateInput" FontSize="15" Grid.Column="1"/>
+                                </Grid>
+                                
+                                <Label Text="End Date / Time: " FontSize="15" Padding="15"/>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" HeightRequest="20" Source="Calendar_icon.png"/>
+                                    <DatePicker x:Name="CourseEndDateInput" FontSize="15" Grid.Column="1"/>
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Enable Notifications" FontSize="15" Padding="15" Grid.Column="0"/>
+                                    <CheckBox x:Name="NotificationsEnabledInput"  Grid.Column="1"/>
+                                </Grid>
+                                
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Margin="15,10,0,0" FontSize="15" Text="Attached Assessments"/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Picker x:Name="CourseAssessmentInput"
+                                            HeightRequest="40"
+                                            FontSize="15"
+                                            Grid.Column="0"
+                                            Title="Select An Assessment"/>
+
+                                    <ImageButton x:Name="PlusAssessmentBtn"
+                                                CornerRadius="10" 
+                                                Padding="5"
+                                                Source="Add_icon.png"
+                                                HeightRequest="40"
+                                                BackgroundColor="#9537B1"
+                                                Grid.Column="1"
+                                                Clicked="PlusAssessmentBtn_clicked"/>
+                                </Grid>
+
+                                <ScrollView>
+                                    <TableView HeightRequest="120" Intent="Data">
+                                        <TableRoot x:Name="AssociatedAssessmentsTblRoot"/>
+                                    </TableView>
+                                </ScrollView>
+
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Grid Margin="20" HorizontalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="120"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="CancelCourseBtn"
+                                    Grid.Column="0"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Cancel"
+                                    Clicked="CancelCourseBtn_clicked"/>
+
+                            <Button x:Name="SaveCourseBtn"
+                                    Grid.Column="1"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Save"
+                                    Clicked="SaveCourseBtn_clicked"/>
+                        </Grid>
+                        
+                    </StackLayout>
+                </Frame>
+                
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

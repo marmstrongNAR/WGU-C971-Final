@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971WGU.Views.TermDetails">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+
+                <Frame Margin="20" CornerRadius="10" BorderColor="#F0F0F0">
+                    <StackLayout>
+
+                        <Label x:Name="TermBanner"
+                                Text="Add New Term"
+                                HorizontalOptions="Center"
+                                TextColor="#008B82"
+                                Margin="0,20,0,20"
+                                FontSize="20"/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Entry x:Name="TermTitleInput" FontSize="15" Placeholder="Term Title"/>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Margin="15,10,0,0" FontSize="15" Text="Courses This Term: "/>
+                        
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Picker x:Name="TermCoursesInput"
+                                            HeightRequest="40"
+                                            FontSize="15"
+                                            Grid.Column="0"
+                                            Title="Select A Course"/>
+
+                                    <ImageButton x:Name="PlusCourseBtn"
+                                                CornerRadius="10" 
+                                                Padding="5"
+                                                Source="Add_icon.png"
+                                                HeightRequest="40"
+                                                BackgroundColor="#9537B1"
+                                                Grid.Column="1"
+                                                Clicked="PlusCourseBtn_clicked"/>
+                                </Grid>
+
+                                <ScrollView>
+                                    <TableView HeightRequest="120" Intent="Data">
+                                        <TableRoot x:Name="AssociatedCoursesTblRoot">
+                                            <TableSection/>
+                                        </TableRoot>
+                                    </TableView>
+                                </ScrollView>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Margin="15,10,0,0" FontSize="15" Text="Term Duration: "/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Label Text="Term Start Date: " FontSize="15" Padding="15"/>
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" HeightRequest="20" Source="Calendar_icon.png"/>
+                                    <DatePicker x:Name="TermStartDateInput" FontSize="15" Grid.Column="1"/>
+                                </Grid>
+
+                                <Label Text="Term End Date: " FontSize="15" Padding="15"/>
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" HeightRequest="20" Source="Calendar_icon.png"/>
+                                    <DatePicker x:Name="TermEndDateInput" FontSize="15" Grid.Column="1"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Grid Margin="20" HorizontalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="CancelTermBtn"
+                                    Grid.Column="0"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Cancel"
+                                    Clicked="CancelTermBtn_clicked"/>
+
+                            <Button x:Name="SaveTermBtn"
+                                    Grid.Column="1"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Save"
+                                    Clicked="SaveTermBtn_clicked"/>
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+                
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971WGU.Views.AssessmentDetails">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+
+                <Frame Margin="20" CornerRadius="10" BorderColor="#F0F0F0">
+                    <StackLayout>
+
+                        <Label x:Name="AssessmentBanner"
+                                Text="Add New Assessment"
+                                HorizontalOptions="Center"
+                                TextColor="#008B82"
+                                Margin="0,20,0,20"
+                                FontSize="20"/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Entry x:Name="AssessmentTitleInput" FontSize="15" Placeholder="Assessment Title"/>
+                                <Picker x:Name="AssessmentCourseInput"
+                                        HeightRequest="40"
+                                        FontSize="15"
+                                        Grid.Column="0"
+                                        Title="Select A Course"/>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Margin="15,10,0,0" FontSize="15" Text="Assessment Type"/>
+
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Objective Assessment" FontSize="15" Padding="15" Grid.Column="0"/>
+                                    <Switch x:Name="OAInput" Grid.Column="1" IsToggled="True" Toggled="OAInput_toggled"/>
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Performance Assessment" FontSize="15" Padding="15" Grid.Column="0"/>
+                                    <Switch x:Name="PAInput" Grid.Column="1" Toggled="PAInput_toggled"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Margin="15,10,0,0" FontSize="15" Text="Assessment Time"/>
+                        
+                        <Frame CornerRadius="10" BorderColor="#F0F0F0" Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <Label Text="Start Date / Time" FontSize="15" Padding="15"/>
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" HeightRequest="20" Source="Calendar_icon.png"/>
+                                    <DatePicker x:Name="AssessmentStartDateInput" FontSize="15" Grid.Column="1"/>
+                                </Grid>
+
+                                <TimePicker x:Name="AssessmentStartTimeInput" FontSize="15"/>
+                                
+                                <Label Text="End Date / Time" FontSize="15" Padding="15"/>
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" HeightRequest="20" Source="Calendar_icon.png"/>
+                                    <DatePicker x:Name="AssessmentEndDateInput" FontSize="15" Grid.Column="1"/>
+                                </Grid>
+
+                                <TimePicker x:Name="AssessmentEndTimeInput" FontSize="15"/>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Enable Notifications" FontSize="15" Padding="15" Grid.Column="0"/>
+                                    <CheckBox x:Name="NotificationsEnabledInput"  Grid.Column="1"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+
+                        <Grid Margin="20" HorizontalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="120"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="CancelAssessmentBtn"
+                                    Grid.Column="0"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Cancel"
+                                    Clicked="CancelAssessmentBtn_clicked"/>
+
+                            <Button x:Name="SaveAssessmentBtn"
+                                    Grid.Column="1"
+                                    HeightRequest="40"
+                                    CornerRadius="10" 
+                                    Margin="15"
+                                    BackgroundColor="#9537B1"
+                                    TextColor="#FFFFFF"
+                                    Text="Save"
+                                    Clicked="SaveAssessmentBtn_clicked"/>
+                        </Grid>
+                        
+                    </StackLayout>
+                </Frame>
+                
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
